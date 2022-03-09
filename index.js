@@ -10,6 +10,7 @@ function getArticleList() {
     .then((data) => {
       let html = "";
       if (data.articles) {
+        html += `<div class="row">`;
         data.articles.forEach((articles) => {
           html += `
           <div class="card" style="width: 18rem;">
@@ -23,6 +24,7 @@ function getArticleList() {
           </div>
           `;
         });
+        html += `</div>`;
       }
 
       articlelList.innerHTML = html;
